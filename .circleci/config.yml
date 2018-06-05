@@ -7,8 +7,9 @@ jobs:
   build:
     working_directory: ~/MobileAzureDevDays/Java/MobileAzureDevDays
     docker:
-      - image: circleci/android:api-25-alpha
       - image: circleci/node:latest
+      - image: circleci/android:api-25-alpha
+      
     environment:
       JVM_OPTS: -Xmx3200m
     steps:

@@ -19,7 +19,7 @@ jobs:
           command: sudo npm install -g appcenter-cli
       - run: 
           name: Inject Sentiment API Key
-          command: find .. -name SentimentClient.java -exec sed -i -e ‘s/SENTIMENT_KEY/‘“${AZURE_SENTIMENT_KEY}”‘/g’ {} \;
+          command: find .. -name SentimentClient.java -exec sed -i -e ‘s/SENTIMENT_KEY/‘“$AZURE_SENTIMENT_KEY”‘/g’ {} \;
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 #      - run:
@@ -53,7 +53,7 @@ jobs:
             APKFile=`find . -name *.apk`
             
             appcenter login --token ${APPCENTER_TOKEN}
-            appcenter distribute release -f home/circleci/apks/*.apk -g Collaborators --app Mahdis-Org/Java-Sample-CircleCI
+            appcenter distribute release -f home/circleci/apks/app-debug.apk -g Collaborators --app Mahdis-Org/Java-Sample-CircleCI
         
 
 

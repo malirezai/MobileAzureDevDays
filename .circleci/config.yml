@@ -46,7 +46,8 @@ jobs:
       - deploy:
           name: "Deploy To AppCenter"
           command: |
-            cd ls
+            cd app/build/outputs/apk
+            ls
             echo "Uploading to AppCenter"
             APKFile=`find . -name *.apk | head -1`
             

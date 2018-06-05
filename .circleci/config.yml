@@ -33,6 +33,20 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-results
-      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
+      - run:
+          name: Initial build
+          command: ./gradlew clean assembleRelease --no-daemon --stacktrace
+      - store_artifacts:
+          path: app/build/outputs/apk/
+          destination: apks/
+      - deploy:
+          name: "Deploy To AppCenter"
+          command: |
+            echo "Uploading to AppCenter"
+            APKFile=`find . -name *.apk | head -1`
+            npm install -g appcenter-cli
+            appcenter login --token ${APPCENTER_TOKEN}
+            appcenter distribute release -f APKFile -g Collaborators --app Mahdis-Org/Java-Sample-CircleCI
+        
 
 

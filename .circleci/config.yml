@@ -19,7 +19,7 @@ jobs:
           command: sudo npm install -g appcenter-cli
       - run: 
           name: Inject Sentiment API Key
-          command: find .. -name SentimentClient.java -exec sed -i -e ‘s/SENTIMENT_KEY/‘“$AZURE_SENTIMENT_KEY”‘/g’ {} \;
+          command: find .. -name SentimentClient.java -exec sed -i -e 's/SENTIMENT_KEY/'"$AZURE_SENTIMENT_KEY"'/g' {} \;
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 #      - run:

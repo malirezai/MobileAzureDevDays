@@ -49,7 +49,7 @@ jobs:
             
             echo "Uploading to AppCenter"
             APKFile=`find -name *.apk | head -1`
-            
+            locate *.apk
             appcenter login --token ${APPCENTER_TOKEN}
             appcenter distribute release -f APKFile -g Collaborators --app Mahdis-Org/Java-Sample-CircleCI
         

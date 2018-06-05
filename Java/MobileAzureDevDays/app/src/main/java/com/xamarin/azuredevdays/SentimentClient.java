@@ -17,7 +17,7 @@ public class SentimentClient {
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     String sentimentAPIRegion = "westus";
-    String sentimentAPIKey = "";
+    String sentimentAPIKey = "SENTIMENT_KEY";
     OkHttpClient client = new OkHttpClient();
     Gson gson = new Gson();
 

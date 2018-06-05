@@ -44,26 +44,26 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         sentimentClient = new SentimentClient();
-        try {
-            sentimentClient.GetKey(
-                    new Callback() {
-                        @Override
-                        public void onFailure(Call call, IOException e) {
-                            System.out.println("Error getting key!");
-                        }
-                        @Override
-                        public void onResponse(Call call, Response response) throws IOException {
-                            if (response.isSuccessful()) {
-                                Models.KeyResponse keyResponse = gson.fromJson(response.body().string(),Models.KeyResponse.class);
-                                sentimentClient.sentimentAPIRegion = keyResponse.region;
-                                sentimentClient.sentimentAPIKey = keyResponse.key;
-                            }
-                        }
-                    }
-            );
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            sentimentClient.GetKey(
+//                    new Callback() {
+//                        @Override
+//                        public void onFailure(Call call, IOException e) {
+//                            System.out.println("Error getting key!");
+//                        }
+//                        @Override
+//                        public void onResponse(Call call, Response response) throws IOException {
+//                            if (response.isSuccessful()) {
+//                                Models.KeyResponse keyResponse = gson.fromJson(response.body().string(),Models.KeyResponse.class);
+//                                sentimentClient.sentimentAPIRegion = keyResponse.region;
+//                                sentimentClient.sentimentAPIKey = keyResponse.key;
+//                            }
+//                        }
+//                    }
+//            );
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         int defaultBkgColor = Color.parseColor(Constants.Colors.defaultBackgroundColor);
 

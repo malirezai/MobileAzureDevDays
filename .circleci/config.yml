@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout:
           path: ~/MobileAzureDevDays 
-      -run: 
+      - run: 
           name: install appcenter-cli
           command: npm install -g appcenter-cli
       - restore_cache:

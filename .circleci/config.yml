@@ -4,7 +4,7 @@
 #
 version: 2
 general:
-  build_dir: Java/MobileAzureDevDays
+  build_dir: /Java/MobileAzureDevDays
 jobs:
   build:
     working_directory: ~/code

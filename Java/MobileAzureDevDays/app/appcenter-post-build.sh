@@ -1,5 +1,5 @@
 #!/bin/bash
-
+npm install npm@latest -g
 npm install -g appcenter-cli
 
 appcenter login --token $APPCENTER_TOKEN
@@ -14,3 +14,5 @@ then
 else
     appcenter test run espresso --app "Mahdis-Org/Java-Sample-AppCenter" --devices "Mahdis-Org/latest-and-greatest" --app-path APKFile --test-series "master" --locale "en_US" --build-dir $APPCENTER_SOURCE_DIRECTORY/Java/MobileAzureDevDays/app/build/outputs/apk
 fi
+
+3d9064856b614edcbaba50790da8a786

@@ -1,5 +1,5 @@
 #!/bin/bash
-if ["$APPCENTER_BRANCH" == "test-branch"]; 
+if [[ "$APPCENTER_BRANCH" == "test-branch" ]]; 
 then
 npm install -g appcenter-cli
 

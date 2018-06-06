@@ -53,7 +53,7 @@ jobs:
             APKFile = `find . -name '*.apk'`
             
             appcenter login --token ${APPCENTER_TOKEN}
-            appcenter distribute release -f APKFile -g Collaborators --app Mahdis-Org/Java-Sample-CircleCI
+            appcenter distribute release -f app/build/outputs/apk/app-debug.apk -g Collaborators --app Mahdis-Org/Java-Sample-CircleCI
         
 
 

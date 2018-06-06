@@ -46,9 +46,9 @@ jobs:
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
-      - run: 
-          name: "Run UITests on AppCenter Test"
-          command: sh ./app/appcenter-post-build.sh
+      # - run: 
+      #     name: "Run UITests on AppCenter Test"
+      #     command: sh ./app/appcenter-post-build.sh
       - deploy:
           name: "Deploy To AppCenter"
           command: |

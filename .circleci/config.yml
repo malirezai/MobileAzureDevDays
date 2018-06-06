@@ -50,7 +50,7 @@ jobs:
           name: "Deploy To AppCenter"
           command: |
             echo "Uploading to AppCenter"
-            APKFile=`find . -name '*.apk'`
+            APKFile = `find . -name '*.apk'`
             
             appcenter login --token ${APPCENTER_TOKEN}
             appcenter distribute release -f APKFile -g Collaborators --app Mahdis-Org/Java-Sample-CircleCI

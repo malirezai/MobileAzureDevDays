@@ -32,4 +32,6 @@ public class Constants {
         }
     }
 
+    public static String APPCENTER_DROID_KEY = "appcenterdroidkey";
+
 }

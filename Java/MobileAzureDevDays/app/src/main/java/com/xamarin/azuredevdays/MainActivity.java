@@ -1,5 +1,9 @@
 package com.xamarin.azuredevdays;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -39,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AppCenter.start(getApplication(), Constants.APPCENTER_DROID_KEY,
+                Analytics.class, Crashes.class);
+
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -85,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.make(view, "You must enter something!", Snackbar.LENGTH_SHORT).show();
                     return;
                 }
+
+                Analytics.trackEvent("Get Sentiment Button Clicked");
 
                 String res = "";
                 getSentimentButton.setText("Calculating");

@@ -4,6 +4,8 @@ npm install -g appcenter-cli
 
 appcenter login --token $APPCENTER_TOKEN
 
+./gradlew assembleDebugAndroidTest 
+
 APKFile=`find . -name '*Test.apk'`
 echo $APKFile
 if ["$APPCENTER_SOURCE_DIRECTORY" == ""]; 

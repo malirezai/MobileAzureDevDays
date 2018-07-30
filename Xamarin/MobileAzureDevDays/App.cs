@@ -8,6 +8,6 @@ namespace MobileAzureDevDays
 {
     public class App : Application
     {
-		public App() => MainPage = new NavigationPage(new LoginPage());
+        public App() => MainPage = new SentimentPage();//new NavigationPage(new LoginPage());
     }
 }

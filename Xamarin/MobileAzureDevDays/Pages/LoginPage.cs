@@ -16,7 +16,7 @@ namespace MobileAzureDevDays.Pages
 			};
 			button.Clicked += async (sender, e) =>
 			{
-				throw new Exception("Crashed!");
+				//throw new Exception("Crashed!");
 				await Navigation.PushAsync(new SentimentPage());
 			};
 

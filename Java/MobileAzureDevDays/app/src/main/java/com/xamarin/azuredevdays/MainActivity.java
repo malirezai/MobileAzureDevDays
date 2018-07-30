@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         backgroundLayout = (LinearLayout) findViewById(R.id.backGroundLayout);
         backgroundLayout.setBackgroundColor(defaultBkgColor);
         toolbar.setBackgroundColor(defaultBkgColor);
-        getWindow().setStatusBarColor(darkenColor(defaultBkgColor));
+        getWindow().setStatusBarColor(Color.BLUE);//darkenColor(defaultBkgColor));
 
         sentimentText = (EditText) findViewById(R.id.sentimentText);
         emojiView = (TextView) findViewById(R.id.emojiView);

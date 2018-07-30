@@ -5,6 +5,7 @@ using Xamarin.UITest;
 using MobileAzureDevDays.Shared.Constants;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
+using System;
 
 namespace MobileAzureDevDays.UITests
 {
@@ -22,16 +23,18 @@ namespace MobileAzureDevDays.UITests
 
         public string EmojiResultsText => App.Query(emojiResultsLabel)?.FirstOrDefault()?.Text;
 
-        public void TapSubmitButton()
+        public SentimentPage TapSubmitButton()
         {
             App.Tap(submitButton);
             App.Screenshot("Submit Button Tapped");
+			return this;
         }
 
         public void EnterText(string text)
         {
             App.EnterText(enterTextBox, text);
             App.Screenshot($"Entered Text: {text}");
+
         }
 
         public void WaitForActivityIndicator()

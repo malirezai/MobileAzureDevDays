@@ -142,8 +142,10 @@ namespace MobileAzureDevDays.ViewModels
 					break;
 				case double number when (number > 0.9):
 					BackgroundColor = ColorConstants.EmotionColor9;
-					break;
+					break;               
 			}
+			//if(Device.RuntimePlatform.Equals(Device.Android))
+                //DependencyService.Get<IToolbarColor>().ChangeColor(BackgroundColor);
 		}
 
 		void SetIsBusy(bool isBusy)

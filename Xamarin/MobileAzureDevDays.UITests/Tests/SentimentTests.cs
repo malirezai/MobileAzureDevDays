@@ -12,15 +12,22 @@ namespace MobileAzureDevDays.UITests
         {
         }
 
+		//[Test]
+		//public void ReplTest()
+		//{
+		//	App.Repl();
+		//}
+
         [Test]
         public void SentimentPage_SubmitHappyText_ResultShouldBeHappyFaceEmoji()
         {
             //Arrange
             const string happyText = "Happy";
 
-            //Act
+			//Act
+			LoginPage.TapLoginButton();
             SentimentPage.EnterText(happyText);
-            SentimentPage.TapSubmitButton();
+			SentimentPage.TapSubmitButton();
             SentimentPage.WaitForNoActivityIndicator();
 
             //Assert
@@ -34,6 +41,8 @@ namespace MobileAzureDevDays.UITests
             const string sadText = "Sad";
 
             //Act
+			LoginPage.TapLoginButton();
+            
             SentimentPage.EnterText(sadText);
             SentimentPage.TapSubmitButton();
             SentimentPage.WaitForNoActivityIndicator();
@@ -49,6 +58,8 @@ namespace MobileAzureDevDays.UITests
             const string neutralText = "Mitigations in Seattle";
 
             //Act
+			LoginPage.TapLoginButton();
+            
             SentimentPage.EnterText(neutralText);
             SentimentPage.TapSubmitButton();
             SentimentPage.WaitForNoActivityIndicator();

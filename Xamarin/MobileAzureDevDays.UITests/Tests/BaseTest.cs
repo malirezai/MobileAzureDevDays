@@ -19,6 +19,7 @@ namespace MobileAzureDevDays.UITests
         #region Properties
         protected IApp App { get; private set; }
         protected SentimentPage SentimentPage { get; private set; }
+		protected LoginPage LoginPage { get; private set; }
         #endregion
 
         #region Methods
@@ -28,6 +29,8 @@ namespace MobileAzureDevDays.UITests
             App = AppInitializer.StartApp(_platform);
 
             SentimentPage = new SentimentPage(App);
+
+			LoginPage = new LoginPage(App);
 
             App.Screenshot("App Launched");
         }

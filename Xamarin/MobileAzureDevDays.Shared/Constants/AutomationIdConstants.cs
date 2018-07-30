@@ -2,6 +2,7 @@
 {
     public class AutomationIdConstants
     {
+		public const string LoginButton = nameof(LoginButton);
         public const string SubmitButton = nameof(SubmitButton);
         public const string EnterTextBox = nameof(EnterTextBox);
         public const string ActivityIndicator = nameof(ActivityIndicator);
